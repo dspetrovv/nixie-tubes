@@ -1,0 +1,111 @@
+@use './animations.scss';
+@use './_variables.scss' as vars;
+
+.tube {
+  position: relative;
+  z-index: 2;
+  height: fit-content;
+
+  &__bulb {
+    border: vars.$tubeBorderWidth solid var(--orange);
+    background-image: linear-gradient(
+      180deg,
+      rgba(2, 0, 36, 0) 20%,
+      rgba(81, 9, 121, 0.7) 100%
+    );
+    width: vars.$tubeWidth;
+    height: vars.$tubeHeight;
+    border-radius: 25px / 25px;
+    animation:
+      tube_background 5s linear infinite,
+      tube_box_shadow 5s linear infinite;
+    transition: box-shadow 1.5s ease-in-out;
+    &_silver {
+      border-color: var(--silver-second);
+      animation:
+        tube_background 5s linear infinite,
+        tube_box_shadow_silver 5s linear infinite;
+    }
+    &_off {
+      transition: border 0.1s ease-in-out;
+      border: vars.$tubeBorderWidth solid var(--off);
+      background: transparent;
+      animation: none;
+    }
+    &_on-off {
+      border: vars.$tubeBorderWidth solid var(--off);
+      background: transparent;
+      animation: tube_border_off 0.7s linear 1;
+      transition: none;
+      &-silver {
+        animation:
+          tube_border_off none,
+          tube_border_off_silver 0.7s linear 1;
+      }
+    }
+  }
+
+  &__stand {
+    position: absolute;
+    width: calc(vars.$tubeWidth);
+    height: vars.$tubeStandHeight;
+    bottom: 0px;
+    left: 0;
+    border: vars.$tubeBorderWidth solid #252525;
+    transition: none;
+    &_active {
+      border-color: var(--orange);
+      animation: tube_stand_border_off 0.7s linear 1;
+      &-silver {
+        animation:
+          tube_stand_border_off none,
+          tube_stand_border_off_silver 0.7s linear 1;
+        border-color: var(--silver-second);
+      }
+    }
+  }
+
+  &__char {
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    font-size: 80px;
+    line-height: calc(vars.$tubeHeight - vars.$tubeStandHeight);
+    height: calc(vars.$tubeHeight - vars.$tubeStandHeight);
+    user-select: none;
+    color: var(--off-character);
+    transition: color 0.2s ease-out;
+    &_silver {
+      color: var(--off-character);
+      border-color: var(--silver-second);
+      animation:
+        tube_background 5s linear infinite,
+        tube_box_shadow_silver 5s linear infinite;
+    }
+    &_active {
+      @include vars.ActiveChar();
+      &-silver {
+        color: var(--silver);
+        animation: tube_char_text_shadow none;
+        transition: text-shadow 1.5s ease-in-out;
+        z-index: 3;
+      }
+    }
+    &_off {
+      color: transparent;
+      transition: none;
+    }
+    &_on-off {
+      transition: none;
+      animation: tube_text_off 0.7s linear 1;
+      &-silver {
+        animation:
+          tube_text_off none,
+          tube_char_text_shadow_silver 0.7s linear 1;
+      }
+    }
+    &_top {
+      top: 0;
+    }
+  }
+}

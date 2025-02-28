@@ -1,0 +1,67 @@
+$shelfHeight: 70px;
+$shelfButtonHeight: 20px;
+
+.stand {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  position: relative;
+  margin-top: -25px;
+  z-index: 3;
+  &__shelf {
+    width: 100%;
+    height: $shelfHeight;
+    background-color: #554771;
+    border-radius: 7px;
+  }
+  &__buttons {
+    position: absolute;
+    width: 100%;
+    height: $shelfHeight;
+    left: 0;
+  }
+  &__button {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    width: fit-content;
+    height: $shelfButtonHeight;
+    background: transparent;
+    border: 0;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(240 255 188);
+    user-select: none;
+    cursor: pointer;
+    &::before {
+      content: '';
+      display: block;
+      background-color: #909090;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 5px;
+      transition:
+        background-color 0.1s ease-in,
+        box-shadow 0.1s ease-in;
+    }
+    bottom: $shelfButtonHeight;
+    &-on {
+      left: 0%;
+    }
+    &-time {
+      left: 70px;
+    }
+    &-random {
+      left: 170px;
+    }
+    &-secret {
+      right: 0%;
+    }
+    &_active::before {
+      background-color: #46ff20;
+      box-shadow: #46ff20 0px 0px 7px 1px;
+    }
+  }
+}

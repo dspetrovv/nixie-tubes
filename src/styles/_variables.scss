@@ -1,0 +1,87 @@
+@mixin ActiveChar {
+  color: var(--yellow) !important;
+  text-shadow:
+    0px 0px 8px var(--red),
+    0px 0px 4px var(--red),
+    0px 0px 8px var(--red) !important;
+  animation: tube_char_text_shadow 5s linear infinite;
+  transition:
+    color 0.3s ease-out,
+    text-shadow 1.5s ease-in-out;
+  z-index: 3;
+}
+
+$tubeWidth: 85px;
+$tubeHeight: 120px;
+$tubeBorderWidth: 2px;
+$tubeStandHeight: 23px;
+
+@media screen and (max-width: 900px) {
+  .main {
+    margin: 0;
+    justify-content: start;
+  }
+  .title {
+    font-size: 38px !important;
+    top: 40px;
+  }
+  .wrapper {
+    transform: scale(0.75);
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 38px !important;
+    top: 45px;
+  }
+  .wrapper {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title {
+    font-size: 35px !important;
+    top: 50px;
+  }
+  .wrapper {
+    transform: scale(0.65);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 32px !important;
+    top: 55px;
+  }
+  .wrapper {
+    transform: scale(0.6);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 30px !important;
+    top: 60px;
+  }
+  .wrapper {
+    transform: scale(0.5);
+  }
+}
+
+:root {
+  --orange: rgb(247, 178, 50);
+  --yellow: rgb(251, 255, 23);
+  --yellow-shadow: rgb(251, 255, 23, 0.6);
+  --red: rgb(255, 41, 13);
+  --red-shadow: rgb(244, 60, 36, 0.6);
+  --off: rgb(255, 255, 255, 0.1);
+  --off-character: rgb(244, 60, 36, 0.055);
+  --off-character-silver: rgb(192, 192, 192, 0.055);
+  --silver: rgb(192, 192, 192);
+  --silver-shadow: rgb(192, 192, 192, 0.6);
+  --silver-shadow-second: rgb(192, 192, 192, 0.03);
+  --silver-second: rgb(222, 222, 222);
+}
