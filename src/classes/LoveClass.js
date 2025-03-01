@@ -35,7 +35,7 @@ class Love extends Script {
     this.#delay = this.#delay + 600;
 
     ////
-    this.#moveLeft();
+    this.#moveTextLeft();
   }
 
   createTubes() {
@@ -118,7 +118,7 @@ class Love extends Script {
     }, this.#delay);
   }
 
-  #moveLeft() {
+  #moveTextLeft() {
     let love = 'ILOVEYOU';
 
     this.#delay += 500;

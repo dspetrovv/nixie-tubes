@@ -13,4 +13,5 @@ export default defineConfig({
     sourcemap: false,
     cssCodeSplit: false,
   },
+  base: '/nixie-tubes/',
 });

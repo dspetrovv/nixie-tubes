@@ -8,7 +8,7 @@ class DefaultText extends Script {
   }
 
   text = ''; // Should be in UpperCase
-  #emptyElementsBeforeCount = 0;
+  #emptyTubesCountBefore = 0;
 
   initEmpty(count = 8) {
     for (let i = 0; i < count; i++) {
@@ -24,8 +24,8 @@ class DefaultText extends Script {
     let tubeIdx = 0;
     let charIdx = 0;
     for (
-      let i = this.#emptyElementsBeforeCount;
-      i < this.text.length + this.#emptyElementsBeforeCount;
+      let i = this.#emptyTubesCountBefore;
+      i < this.text.length + this.#emptyTubesCountBefore;
       i++
     ) {
       this.tubes[i].on();
@@ -51,7 +51,7 @@ class DefaultText extends Script {
       if (!!((i + 1) % 2)) {
         this.tubes.push(new Tube()); // May be Silver
       } else {
-        this.#emptyElementsBeforeCount++;
+        this.#emptyTubesCountBefore++;
         this.tubes.unshift(new Tube()); // May be Silver
       }
     }

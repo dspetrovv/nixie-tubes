@@ -37,9 +37,9 @@ class Friends extends Script {
     ////
     this.#setPassword();
     ////
-    this.#flickingPassword();
+    this.#flickPassword();
     ////
-    this.#welcomeBack();
+    this.#setWelcomeBack();
     ////
     this.#fillMembers();
     ////
@@ -72,8 +72,8 @@ class Friends extends Script {
       ['L', 'L', 'I', 'R', 'I', 'K', '', ''],
       ['P', 'E', 'T', 'Y', 'A', '', '', ''],
       ['S', 'T', 'Y', 'O', 'P', 'K', 'A', ''],
-      ['I', 'L', 'Y', 'A', '', '', '', ''],
-      ['S', 'A', 'N', 'Y', 'A', '', '', ''],
+      ['I', 'L', 'U', 'X', 'X', 'A', '', ''],
+      ['O', 'S', 'Y', 'K', '', '', '', ''],
     ];
     let colIdx = 0;
     for (let i = 0; i < 8; i++) {
@@ -134,7 +134,7 @@ class Friends extends Script {
     this.#delay += 500 * 8;
   }
 
-  #flickingPassword() {
+  #flickPassword() {
     for (let i = 0; i < 3; i++) {
       this.#delay += 300;
       setTimeout(() => {
@@ -163,7 +163,7 @@ class Friends extends Script {
     }, this.#delay);
   }
 
-  #welcomeBack() {
+  #setWelcomeBack() {
     const welcomeBack = 'WELCOME BACK, DEAD ILITA';
     setTimeout(() => {
       let idx = 0;
@@ -200,7 +200,7 @@ class Friends extends Script {
   }
 
   #fillMembers() {
-    const members = ['VIKING', 'LLIRIK', 'PETYA', 'STYOPKA', 'ILYA', 'SANYA'];
+    const members = ['VIKING', 'LLIRIK', 'PETYA', 'STYOPKA', 'ILUXXA', 'OSYK'];
     for (const member of members) {
       setTimeout(() => {
         for (let i = 0; i < member.length; i++) {
