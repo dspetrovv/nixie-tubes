@@ -43,7 +43,7 @@ class Friends extends Script {
     ////
     this.#fillMembers();
     ////
-    this.#exit();
+    this.#showIlita();
   }
 
   #turnLightsOn() {
@@ -223,7 +223,7 @@ class Friends extends Script {
     }
   }
 
-  #exit() {
+  #showIlita() {
     setTimeout(() => {
       this.tubes[0].off();
       this.tubes[6].off();

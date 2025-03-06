@@ -73,48 +73,56 @@ class Love extends Script {
     setTimeout(() => {
       this.tubes[3].addChar('♡');
       this.tubes[3].setActiveChar('-');
+      this.tubes[3].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[6].addChar('♡');
       this.tubes[6].setActiveChar('-');
+      this.tubes[6].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[4].addChar('♡');
       this.tubes[4].setActiveChar('-');
+      this.tubes[4].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[1].addChar('♡');
       this.tubes[1].setActiveChar('-');
+      this.tubes[1].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[0].addChar('♡');
       this.tubes[0].setActiveChar('<');
+      this.tubes[0].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[5].addChar('♡');
       this.tubes[5].setActiveChar('-');
+      this.tubes[5].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[7].addChar('♡');
       this.tubes[7].setActiveChar('♡');
+      this.tubes[7].stopTimer();
     }, this.#delay);
 
     this.#delay += 400;
     setTimeout(() => {
       this.tubes[2].addChar('♡');
       this.tubes[2].setActiveChar('-');
+      this.tubes[2].stopTimer();
     }, this.#delay);
   }
 

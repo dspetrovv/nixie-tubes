@@ -11,8 +11,12 @@ class RandomCharacterTube extends Tube {
   type = ''; // 'all' | 'symbols' | 'alphabet' | 'numbers' | 'custom'
   #timer = null;
 
-  stopRandom() {
+  stopTimer() {
     clearInterval(this.#timer);
+  }
+
+  stopRandom() {
+    this.stopTimer();
     this.clearChars();
     this.off();
   }

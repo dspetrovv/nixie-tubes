@@ -252,12 +252,14 @@ class Tube {
   /**
    * This method turns off the tubes
    */
-  off() {
+  off(offChars = true) {
     this.#tubeBulb.classList.add('tube__bulb_off');
     this.#tubeStand.classList.remove(this.standClass);
-    this.#tubeChars.forEach((char) => {
-      char.classList.add('tube__char_off');
-    });
+    if (offChars === true) {
+      this.#tubeChars.forEach((char) => {
+        char.classList.add('tube__char_off');
+      });
+    }
   }
 
   /**

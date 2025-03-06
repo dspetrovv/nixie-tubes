@@ -5,6 +5,7 @@ import Friends from '@/classes/FriendsClass.js';
 
 // Toggle it with FriendsClass and use on secret button
 // import Love from '@/classes/LoveClass.js';
+import WomensDay from '@/classes/WomensDay.js';
 
 const app = () => {
   const title = document.getElementById('title');
@@ -114,8 +115,8 @@ const app = () => {
     checkMode('secret');
 
     if (!secret) {
-      // Toggle with LoveClass here
-      secret = new Friends(secretButton, wrapperSelector);
+      // Toggle with LoveClass or WomensDay here
+      secret = new WomensDay(secretButton, wrapperSelector);
     }
     secret.toggle();
   };
